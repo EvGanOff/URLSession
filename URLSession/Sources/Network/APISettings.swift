@@ -14,3 +14,8 @@ struct MarvelAPI {
     static let ts = Date.timeIntervalSinceReferenceDate
     static let serverURL = "https://gateway.marvel.com:443"
 }
+
+struct MagicTheGatheringAPISettings {
+    static let requestString = "/v1/cards"
+    static let serverURL = "https://api.magicthegathering.io"
+}

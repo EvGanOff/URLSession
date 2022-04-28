@@ -25,7 +25,7 @@ public final class EndpointClient {
 
     // MARK: - Private Properties
     private let applicationSettings: ApplicationSettingsService
-    private var masterServerURL: String { MarvelAPI.serverURL }
+    private var masterServerURL: String { MagicTheGatheringAPISettings.serverURL }
 
     // MARK: - Initialization
     public init(applicationSettings: ApplicationSettingsService) {
