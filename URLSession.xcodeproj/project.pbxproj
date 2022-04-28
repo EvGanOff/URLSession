@@ -59,12 +59,20 @@
 				5ED05825281AAEF0009B4688 /* AppDelegate.swift */,
 				5ED05827281AAEF0009B4688 /* SceneDelegate.swift */,
 				5ED05829281AAEF0009B4688 /* ViewController.swift */,
-				5ED0582B281AAEF0009B4688 /* Main.storyboard */,
 				5ED0582E281AAEF1009B4688 /* Assets.xcassets */,
-				5ED05830281AAEF1009B4688 /* LaunchScreen.storyboard */,
+				5ED05839281AAF41009B4688 /* Storyboards */,
 				5ED05833281AAEF1009B4688 /* Info.plist */,
 			);
 			path = URLSession;
+			sourceTree = "<group>";
+		};
+		5ED05839281AAF41009B4688 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5ED0582B281AAEF0009B4688 /* Main.storyboard */,
+				5ED05830281AAEF1009B4688 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +305,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +334,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
