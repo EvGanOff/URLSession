@@ -19,13 +19,13 @@ class ViewController: UIViewController {
 
     func executeCall() {
         let endpoint = GetNameEndpoint()
-        let completion: EndpointClient.ObjectEndpointCompletion<String> = { result, response in
-            guard let responseUnwrapped = response else { return }
+        let completion: EndpointClient.ObjectEndpointCompletion<Cards> = { result, response in
+            guard response != nil else { return }
 
-            print("\n\n response = \(responseUnwrapped.allHeaderFields) ;\n \(responseUnwrapped.statusCode) \n")
+            //print("\n\n response = \(responseUnwrapped.allHeaderFields) ;\n \(responseUnwrapped.statusCode) \n")
             switch result {
             case .success(let team):
-                print("team = \(team)")
+                team.printInfoAboutCards()
 
             case .failure(let error):
                 print(error)
@@ -35,22 +35,13 @@ class ViewController: UIViewController {
     }
 }
 
-final class GetNameEndpoint: ObjectResponseEndpoint<String> {
+final class GetNameEndpoint: ObjectResponseEndpoint<Cards> {
     override var method: RESTClient.RequestType { return .get }
-    override var path: String { MarvelAPI.request }
-//    override var queryItems: [URLQueryItem(name: "id", value: "1")]?
+    override var path: String { MagicTheGatheringAPISettings.requestString }
 
     override init() {
         super.init()
-        let ts = MarvelAPI.ts
-        let apiKey = MarvelAPI.apiKey
-        let privateKey = MarvelAPI.privateKey
-        let hash = (String(ts) + privateKey + apiKey).md5()
-        queryItems = [URLQueryItem(name: "name", value: "Black Lotus"),
-                      URLQueryItem(name: "ts", value: String(ts)),
-                      URLQueryItem(name: "apikey", value: apiKey),
-                      URLQueryItem(name: "hash", value: hash)
-        ]
+        queryItems = [URLQueryItem(name: "name", value: "Oct|Black Octopus")]
     }
 }
 
@@ -58,9 +49,7 @@ func decodeJSONOld() {
     let str = """
         {\"team\": [\"ios\", \"android\", \"backend\"]}
     """
-
     let data = Data(str.utf8)
-
     do {
         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
             if let names = json["team"] as? [String] {
@@ -71,3 +60,4 @@ func decodeJSONOld() {
         print("Failed to load: \(error.localizedDescription)")
     }
 }
+
